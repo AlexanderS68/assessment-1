@@ -16,7 +16,7 @@ def optimal_change(item_cost, amount_paid):
   
   #Check that paid amount is enough
   if amount_paid < item_cost:
-    return('insufficent funds')
+    return('Insufficent funds')
 
   #A check if any amount needs to be taken away from
   if amount_due > 0:
@@ -44,4 +44,4 @@ def optimal_change(item_cost, amount_paid):
 
 
 
-print(optimal_change(23.45, 51.89))
+print(optimal_change(1, 8))
