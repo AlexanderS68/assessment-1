@@ -10,13 +10,22 @@ def optimal_change(item_cost, amount_paid):
     for i in range(len(currency)):
       times_how_many = math.floor(amount_due // currency[i])
       #where you account for single/plural
-      if i >= 6 and times_how_many > 0:
-        holding_ground += f'{times_how_many} ${currency[i]} cent '
-        amount_due -= (times_how_many * currency[i])
-        continue
-      if times_how_many > 0:
-        holding_ground += f'{times_how_many} ${currency[i]} bill '
-        amount_due -= (times_how_many * currency[i])
+      if times_how_many > 1:
+        if i >= 6 and times_how_many > 0:
+          holding_ground += f'{times_how_many} ${currency[i]} cents '
+          amount_due -= (times_how_many * currency[i])
+          continue
+        if times_how_many > 0:
+          holding_ground += f'{times_how_many} ${currency[i]} bills '
+          amount_due -= (times_how_many * currency[i])
+      elif times_how_many > 0:
+        if i >= 6 and times_how_many > 0:
+          holding_ground += f'{times_how_many} ${currency[i]} cent '
+          amount_due -= (times_how_many * currency[i])
+          continue
+        if times_how_many > 0:
+          holding_ground += f'{times_how_many} ${currency[i]} bill '
+          amount_due -= (times_how_many * currency[i])
        
   return holding_ground
-print(optimal_change(1, 7.85))
+print(optimal_change(1, 8.24))
