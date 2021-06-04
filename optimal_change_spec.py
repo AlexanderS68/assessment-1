@@ -14,6 +14,9 @@ class OptimalChange(unittest.TestCase):
     self.assertTrue(optimal_change(23.45, 51.89), 'The optimal change for an item that costs $23.45 with an amount paid of $51.89 is, 1 $20 bill, 1 $5 bill, 3 $1 bills, 1 $0.25 cent, 1 $0.1 cent, 1 $0.05 cent, 4 $0.01 cents.')
   
 
+  def test_edge_case(self):
+    self.assertEqual(optimal_change(100, 10), )
+
 
 if __name__ == '__main__':
   unittest.main()
