@@ -11,7 +11,7 @@ def optimal_change(item_cost, amount_paid):
   holding_ground = f'The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is'
 
   #Check that both inputs are an integer or float
-  if item_cost == '' or amount_paid == '':
+  if item_cost != int or amount_paid != int:
     return('Input a valid integer or float')
   
   #Check that paid amount is enough
@@ -44,4 +44,4 @@ def optimal_change(item_cost, amount_paid):
 
 
 
-print(optimal_change(1, 8.47))
+print(optimal_change('f', 8.47))
