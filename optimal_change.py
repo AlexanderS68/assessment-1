@@ -8,7 +8,7 @@ def optimal_change(item_cost, amount_paid):
   amount_due = float(amount_paid - item_cost)
 
   #Variable holding opening statement and to append currency amount and type
-  holding_ground = f'The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is '
+  holding_ground = f'The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is'
 
   #Check that both inputs are an integer or float
   if item_cost == '' or amount_paid == '':
@@ -17,7 +17,7 @@ def optimal_change(item_cost, amount_paid):
   #Check that paid amount is enough
   if amount_paid < item_cost:
     return('insufficent funds')
-    
+
   #A check if any amount needs to be taken away from
   if amount_due > 0:
     for i in range(len(currency)):
@@ -25,19 +25,23 @@ def optimal_change(item_cost, amount_paid):
       #If statement to check if remainder is higher than one to account for singular or plural
       if times_how_many > 1:
         if i >= 6 and times_how_many > 0:
-          holding_ground += f'{times_how_many} ${currency[i]} cents '
+          holding_ground += f', {times_how_many} ${currency[i]} cents'
           amount_due -= (times_how_many * currency[i])
           continue
         elif times_how_many > 0:
-          holding_ground += f'{times_how_many} ${currency[i]} bills '
+          holding_ground += f', {times_how_many} ${currency[i]} bills'
           amount_due -= (times_how_many * currency[i])
       #Same check for remainder/ singular,plural
       elif times_how_many > 0:
         if i >= 6 and times_how_many > 0:
-          holding_ground += f'{times_how_many} ${currency[i]} cent '
+          holding_ground += f', {times_how_many} ${currency[i]} cent'
           amount_due -= (times_how_many * currency[i])
           continue
         elif times_how_many > 0:
-          holding_ground += f'{times_how_many} ${currency[i]} bill '
+          holding_ground += f', {times_how_many} ${currency[i]} bill'
           amount_due -= (times_how_many * currency[i])
-  return holding_ground
+  return holding_ground + '.'
+
+
+
+print(optimal_change(23.45, 51.89))
