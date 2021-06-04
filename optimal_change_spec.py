@@ -15,7 +15,7 @@ class OptimalChange(unittest.TestCase):
   
 
   def test_edge_case(self):
-    self.assertEqual(optimal_change(100, 10), )
+    self.assertEqual(optimal_change(100, 10), 'Insufficent funds')
 
 
 if __name__ == '__main__':
