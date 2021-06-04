@@ -13,7 +13,7 @@ def optimal_change(item_cost, amount_paid):
       if i >= 6 and times_how_many > 0:
         holding_ground += f'{times_how_many} ${currency[i]} cent '
         amount_due -= (times_how_many * currency[i])
-        break
+        continue
       if times_how_many > 0:
         holding_ground += f'{times_how_many} ${currency[i]} bill '
         amount_due -= (times_how_many * currency[i])
