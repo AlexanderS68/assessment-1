@@ -13,6 +13,11 @@ def optimal_change(item_cost, amount_paid):
   #Check that both inputs are an integer or float
   if item_cost == '' or amount_paid == '':
     return('Input a valid integer or float')
+  
+  #Check that paid amount is enough
+  if amount_paid < item_cost:
+    return('insufficent funds')
+    
   #A check if any amount needs to be taken away from
   if amount_due > 0:
     for i in range(len(currency)):
