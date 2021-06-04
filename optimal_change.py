@@ -44,4 +44,4 @@ def optimal_change(item_cost, amount_paid):
 
 
 
-print(optimal_change(1, 8))
+print(optimal_change(1, 8.47))
